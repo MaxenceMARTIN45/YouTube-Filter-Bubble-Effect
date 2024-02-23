@@ -1,0 +1,62 @@
+Méthodologie
+
+I - Collecte
+II - Mise en forme des données et construction des graphes
+III - Présentation des différents graphes de leurs utilités dans l'analyse de la problématique
+
+I - Collecte
+
+-On utilise Selenium (librairie python)
+-On part d’une vidéo initiale
+-On récupère les 3 premières vidéos recommandées
+-On parcourt ces vidéos en récupérant les titres, les vues, les chaines etc…
+-On répétant l’opération
+-On s’arrête à une profondeur de 6
+-On répète ensuite ces opérations sur les 3 premières vidéos recommandées à chaque itération
+-On génère un csv de données brutes
+
+II - Mise en forme des données et construction des graphes
+
+-On utilise le csv généré par le script de crawl et on génère des fichiers utilisables par gephi (fichier de noeuds et fichier de liens)
+-On choisit dans gephi la stratégie de fusion des liens “Somme” pour représenter le nombre de fois qu’une vidéo en a recommandé une autre
+-On utilise “Force Atlas 2” pour obtenir une spatialisation en fonctions des liens entre les noeuds
+-On utilise ensuite “Force Atlas” pour aérer le graphe
+-On utilise ensuite d’abord “Expansion” puis “Déchevauchement” pour faciliter la lecture du graphe
+-On associe la taille des noeuds à leur degré entrant (pareil pour les titres)
+-On utilise ensuite les couleurs des noeuds pour créer 4 graphes par vidéos pour mettre en valeur différents effets de bulle de filtre
+
+III - Présentation des différents graphes de leurs utilités dans l'analyse de la problématique
+
+1) Coloration par classes de modularité
+
+-On cherche, avec les classe de modularité, à trouver des thèmes communs au sein des classes grâce aux titres/mots-clés/chaînes des vidéos
+-L’analyse de ces thèmes nous permet de dire si on s’éloigne du thème de la vidéo originale ou non (est ce que youtube nous propose des choses différentes ou pas)
+-On différencie les “macro thèmes” (Metal, Gaming, Divertissement…) des thèmes de niche (Slipknot, Tutos Minecraft, Pranks…)
+
+-On utilise la détection de classe de modularités avec gephi puis on colore les noeuds en fonction de leur classe
+-On cherche, avec ces classe de modularité, à trouver des thèmes communs au sein des classes
+-L’analyse de ces thèmes nous permet de dire si on s’éloigne du thème de la vidéo originale ou non (est ce que youtube nous propose des choses différentes ou pas)
+-On différencie les “macro thèmes” (Musique, Gaming, Divertissement…) des thèmes de niche (Metal, Tutos Minecraft, Pranks…)
+
+2) Coloration par chaînes
+
+On colore ensuite les noeuds appartenant aux 8 chaînes les plus représentées. On utilise cette coloration pour mettre en évidence un effet de bulle de filtre au sein d’une chaîne (est ce qu’on reste toujours dans la même chaîne au fil des itérations ou est ce qu’on en découvre de nouvelles)
+
+3) Coloration par genres
+
+On colore les nœuds en fonction du genre que leur auteur leur a attribué. On cherche ici à voir si youtube nous enferme dans un type de vidéo en particulier (Gaming, Science et Technologie…)
+
+4) Carte de chaleur
+
+-On utilise la fonction “carte chaleur” de gephi en partant du noeud correspondant à la vidéo initiale
+-Avec cet outil, les noeuds sont colorés en fonction de leur distance à la vidéo initiale, mais aussi par rapport au poids des liens permettant de les atteindre depuis la vidéo initiale (plus une vidéo en recommande une autre, plus on a de chance d’emprunter ce “chemin” lorsqu’on parcourt youtube)
+-On a donc une bonne représentation des vidéos les plus susceptibles d’être visionnées en partant de la vidéo initiale en fonction de leur chaleur. On peut ainsi définir les thèmes les plus recommandés en liant cette information au graphe des classes de modularité et ainsi déterminer si youtube recommande en priorité des vidéos similaires à la vidéo initiale.
+
+5) Courbes d’unicité
+
+-Il arrive souvent qu’on tombe sur une vidéo déjà récupérée lors du crawl (si elle nous a été recommandée plusieurs fois). On crée donc une courbe représentant le nombre de vidéos uniques rencontrées à chaque profondeur du crawl (courbes créées avec R)
+-On crée aussi une courbe des chaînes uniques et des genres de vidéos uniques rencontrés à chaque profondeur du crawl
+-En général, moins on a de vidéos/chaînes/genres uniques pour une profondeur donnée, plus on a un effet d’enfermement (on retombe sans cesse sur les mêmes vidéos/chaînes/genres)
+-On peut aussi comparer les différents effets de bulle de filtre (on peut rencontrer beaucoup de vidéos uniques mais pas beaucoup de chaînes etc…). On peut donc différencier plusieurs effets de bulles de filtre en couplant ces courbes aux analyses de graphe.
+
+

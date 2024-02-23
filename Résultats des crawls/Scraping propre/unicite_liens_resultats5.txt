@@ -1,0 +1,50 @@
+liens_resultats5
+
+Crawl 0 :
+	Videos uniques observees  : 1
+	Maximum de videos uniques : 1
+
+	Chaines uniques observees : 1
+	Genres uniques observees  : 1
+
+Crawl 1 :
+	Videos uniques observees  : 4
+	Maximum de videos uniques : 4
+
+	Chaines uniques observees : 3
+	Genres uniques observees  : 2
+
+Crawl 2 :
+	Videos uniques observees  : 13
+	Maximum de videos uniques : 13
+
+	Chaines uniques observees : 7
+	Genres uniques observees  : 5
+
+Crawl 3 :
+	Videos uniques observees  : 37
+	Maximum de videos uniques : 40
+
+	Chaines uniques observees : 12
+	Genres uniques observees  : 7
+
+Crawl 4 :
+	Videos uniques observees  : 107
+	Maximum de videos uniques : 121
+
+	Chaines uniques observees : 37
+	Genres uniques observees  : 8
+
+Crawl 5 :
+	Videos uniques observees  : 290
+	Maximum de videos uniques : 364
+
+	Chaines uniques observees : 101
+	Genres uniques observees  : 11
+
+Crawl 6 :
+	Videos uniques observees  : 775
+	Maximum de videos uniques : 1093
+
+	Chaines uniques observees : 233
+	Genres uniques observees  : 14

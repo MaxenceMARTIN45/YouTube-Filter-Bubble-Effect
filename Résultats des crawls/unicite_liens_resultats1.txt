@@ -1,0 +1,29 @@
+liens_resultats1
+
+Crawl 0 :
+	Maximum de videos uniques : 1
+	Videos uniques observees  : 1
+
+Crawl 1 :
+	Videos uniques observees  : 4
+	Maximum de videos uniques : 4
+
+Crawl 2 :
+	Videos uniques observees  : 13
+	Maximum de videos uniques : 13
+
+Crawl 3 :
+	Videos uniques observees  : 36
+	Maximum de videos uniques : 40
+
+Crawl 4 :
+	Videos uniques observees  : 95
+	Maximum de videos uniques : 121
+
+Crawl 5 :
+	Videos uniques observees  : 265
+	Maximum de videos uniques : 364
+
+Crawl 6 :
+	Videos uniques observees  : 687
+	Maximum de videos uniques : 1093
